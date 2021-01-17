@@ -10,6 +10,8 @@ set incsearch
 set laststatus=2
 set history=100
 set cindent
+"backspace无法删除上一行或者之前编辑的加上该配置就好了
+set backspace=2
 set tabstop=4
 noremap J 5j
 noremap K 5k
@@ -28,7 +30,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " YouCompleteMe
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
