@@ -34,3 +34,42 @@ ranger 文件管理器
 vim-fugitive 
 airblade/vim-gitgutter 显示+ -
 gv.vim 打开提交记录
+
+!command
+:62,72 !sort
+
+分屏
+split 上下分屏
+vsplit 左右分屏
+set splitright 光标右边
+map sl :set splitright<CR>:vsplit<CR>
+map sh :set nosplitright<CR>:vsplit<CR>
+map sk :set nosplitbelow<CR>:split<CR>
+map sj :set splitbelow<CR>:split<CR>
+: e ~/Desktop/a.py 分完屏以后打开新文件 e是edit
+ctrl+w + [hjkl] 分屏光标移动 快捷键
+visulal模式下多行编辑
+map <LEADER>l <C-w>l
+map <LEADER>h <C-w>h
+map <LEADER>j <C-w>j
+map <LEADER>k <C-w>k
+更改分屏大小
+:res
+:vertical resize-5
+map <up> :res+5<CR>
+map <down> :res-5<CR>
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR>
+标签页
+tabe
+tab往右 +tabnext 往左-tabnext
+快捷键
+map tt :tabe<CR>
+map tj :+tabnext<CR>
+map tk :-tabnext<CR>
+上下分屏改成左右分屏
+map sv <C-w>t<C-w>H
+map sh <C-w>t<C-w>K
+
+
+r !cat setup 从外部复制进来
