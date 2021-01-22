@@ -73,3 +73,5 @@ map sh <C-w>t<C-w>K
 
 
 r !cat setup 从外部复制进来
+:%s/old/new/g 搜索整个文件，将所有的old替换为new
+:%s/old/new/gc 搜索整个文件，将所有的old替换为new，每次都要你确认是否替换

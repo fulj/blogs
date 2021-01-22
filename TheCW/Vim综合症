@@ -1,0 +1,5 @@
+用vim是用的一种生态，一种围绕着vim快捷键的一种生态，不只是vim，文件管理器，git客户端，shell用的都是vim快捷键
+vim就是干什么两只手都不需要离开键盘
+痛点：光标跨行移动
+vim 现有的 可以ctrl+u ctrl+d 来翻页 左右大括号按自然段跳跃 10G 10j 等
+relativenumber 数字键好远。。。

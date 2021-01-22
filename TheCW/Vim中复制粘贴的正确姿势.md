@@ -1,0 +1,6 @@
+-iiihfkasdasdfadffjhy
+- y0 从光标开始复制到行首
+- vim上的剪切板是跟系统的剪切板不共享的
+- set clipboard=unnamedplus - 共享系统的剪切板
+- 共享剪切板插件 快捷键 "+y vnoremap Y "+y visual模式下 vim-peekaboo
+- 历史剪切板 插件coc.vim coc-yank
