@@ -69,4 +69,36 @@ gcc -Werror -std=c99 -c -o circulararea.o circulararea.c
 gcc circle.o circulararea.o /usr/lib/libm.so -o circle
 ```
 在运行make时候加上-p选项，可以显示make的内置规则
+## 变量
+make采用一个规则时，他会计算包括目标，依赖条件和命令中的变量，GUN make中的变量有两种
+- 递归展开(recursively expanded) 
+	- 展开时，嵌套的变量引用都被存储下来直到变量的值被计算出来 
+	- 赋值运算符为=
+	```
+	DEBUGFLAGS=$(CFLAGS) -ggdb -DDEBUG -Oo
+	# make会逐字存储等号右边的字符序列；一直到在使用$(DEBUGFLAGS)时，
+	嵌套的变量$(FLAGS)才会被展开
+	```
+	
+- 简单展开(simple expanded)
+	- 变量的引用会在赋值时立刻展开，并保存下来 
+	- 赋值运算符为:=
+	```
+	OBJ=circle.o circulararea.o
+	TESTOBJ := $(OBJ) profile.o
+	# 直接展开，后续如果OBJ的值改变也不会影响TESTOBJ的值
+	```
+	
+在命令中定义变量
+```
+$ make CFLAGS=-ffinite-math-only circlararea.o
+# 命令中的变量会被makefile中带有override关键字的赋值操作所屏蔽
+override CPPLFAGS=-DEBUG
 
+```
+**+=附加运算符（append operator)**    
+将更多字符附加到一个变量现有值的后面  
+**?= 条件赋值（condition assignment）**  
+仅当变量本来没有值的情况下，才执行操作。
+### 变量和空白符
+### 目标专用的赋值变量
