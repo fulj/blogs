@@ -101,4 +101,50 @@ override CPPLFAGS=-DEBUG
 **?= 条件赋值（condition assignment）**  
 仅当变量本来没有值的情况下，才执行操作。
 ### 变量和空白符
+**1-4** 
+```
+# 工作与选项
+CC=gcc
+CFLAGS=-c -Wall -std=c99 $(ASMFLAGS)
+DEBUGCFLAGS=-ggdb -Oo
+RM = rm -f
+
+MKDIR = mkdir -p
+
+# 文件名
+OBJ=circle.o circulararea.o
+SYMTABS=$(OBJ: .o = .sym)
+EXEX=circle
+# 主要对象
+production: clean circle
+testing: clean debug
+symbols: $(SYMTABS)
+clean:
+	$(RM) $(OBJ) *.sym circle circle-dbg
+# 创建依赖条件的规则
+circle debug: $(OBJ) -lm
+	$(CC) $(LDFLAGS) -o $(EXEC) $^
+
+$(OBJ): %.o: %.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ %<
+
+$(SYMTABS): %.sym: %.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ %<
+
+# 对象特定选项
+debug: CPPFLAGS += -DDEBUG
+debug: EXEC = circle-dbg
+debug symbols: CFLAG+=$(DEBUGCFLAGS)
+symbols: ASMFLAGS = -Wa,-as = $*.sm, -L 
+```
 ### 目标专用的赋值变量
+### 其他目标属性
+**.IGNORE**   
+**.INTERMEDIATE**   
+**.LOW_RESOLUTION_TIME**   
+**.PHONY**   
+**.PRECIOUS**  
+**.SECONDARY**  
+### 函数
+**$(subst find_text, replacement_text, original_text)**    
+**\$(findstring find_text, original_text)** 
