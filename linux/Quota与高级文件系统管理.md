@@ -55,4 +55,7 @@ mkdir /home/myquota
 chgrp myquotagrp /home/myquota
 chmod 2770 /home/myquota
 ```
+> &#124; 代表 | 因为124是|的十进制编码 所以整个命令翻译成 echo "password" | passwd --stdin $username  
+> passwd 在ubuntu上不支持--stdin 选项 ，在centos上可以。  
+> 
 
