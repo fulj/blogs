@@ -59,3 +59,69 @@ chmod 2770 /home/myquota
 > passwd 在ubuntu上不支持--stdin 选项 ，在centos上可以。  
 > 
 
+# 软件磁盘阵列（Software RAID）
+RAID 全名 Redundant Array of Inexpensive Disks , 中文意思是独立冗余磁盘阵列。RAID可以通过（软件或硬件）技术将多个较小的磁盘整合为一个较大的磁盘设备，具有提高性能，保护数据的功能。RAID level 不同 功能不同
+
+RAID 0 (等量模式，stripe)：性能最佳
+---
+1. RAID 会将磁盘切成等量的数据块（chunk, 可设置4KB-1KB）
+2. 当一个文件写入RAID时，将文件按照chunk大小切割，之后依次放到各个磁盘
+3. 两块磁盘组成RAID 0 当你有100M数据要存储时，每块磁盘写入50M
+4. 性能好，可靠性低，因为任何一块磁盘故障都会导致文件损坏
+
+RAID 1（镜像模式，mirror）：完整备份
+---
+1. 同一份数据，完整的保存在两块磁盘中，性能查，可靠性好
+
+RAID 1+0，RAID 0+1
+---
+RAID 1+0: 先RAID1 再 RAID0  
+推荐
+
+RAID 0+1: 先RAID0 再 RAID1
+
+software, hardware RAID
+---
+- hardware RAID 磁盘阵列卡
+- software RAID mdadm (Multiple Disk and Device Management)
+
+软件磁盘阵列的设置
+---
+- 利用4个partition组成RAID5
+- 每个partition约为1G大小
+- 利用1个partition设置为spare disk
+- chunk设置为256K大小
+- 这个spare的大小与其他RAID所需partition一样大
+- 将此RAID5 设备挂载到/srv/raid目录下
+
+#### 格式化与挂载使用RAID
+- stripe（chunk） 容量为512K，所以su=512k
+- 公有4颗组成RAID5，因此容量少一颗，所以sw=3
+- 由上面两项计算出数据宽度为：512\*3=1536k
+所以命令为：  
+```
+[root@hadoop-master ~]# mkfs.xfs -f -d su=512k,sw=3 -r extsize=1536k /dev/md0
+meta-data=/dev/md0               isize=512    agcount=8, agsize=98176 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=784896, imaxpct=25
+         =                       sunit=128    swidth=384 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=8 blks, lazy-count=1
+realtime =none                   extsz=1572864 blocks=0, rtextents=0
+
+[root@hadoop-master ~]# mkdir /srv/raid
+[root@hadoop-master ~]# mount /dev/md0 /srv/raid
+[root@hadoop-master ~]# df
+Filesystem              1K-blocks    Used Available Use% Mounted on
+/dev/mapper/centos-root  17811456 9723268   8088188  55% /
+devtmpfs                   486708       0    486708   0% /dev
+tmpfs                      498976       0    498976   0% /dev/shm
+tmpfs                      498976   14248    484728   3% /run
+tmpfs                      498976       0    498976   0% /sys/fs/cgroup
+/dev/sda1                 1038336  132472    905864  13% /boot
+tmpfs                       99796       0     99796   0% /run/user/0
+tmpfs                       99796       0     99796   0% /run/user/1000
+/dev/md0                  3129344   33072   3096272   2% /srv/raid
+```

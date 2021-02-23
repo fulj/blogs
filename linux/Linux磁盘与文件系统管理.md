@@ -69,5 +69,40 @@ inode对照表（inode bitmap）
 ls -li
 ```
 
+# 磁盘的分区、格式化、检验与挂载
+
+XFS文件系统 mkfs.xfs
+---
+```
+mkfs.xfs /dev/sdd1	
+blkid /dev/sdd1
+```
+
+xfs 可以使用多个数据流来读写系统，以增加速度，因此那个agcount可以跟CPU的内核来做搭配
+
+XFS文件系统for RAID性能优化（Optional）
+---
+
+# 文件系统挂载与卸载
+mount   
+unmount 
+
+# 设置启动挂载
+
+启动挂载/etc/fstab 及 /etc/mtab  
+/etc/fatab是启动时的配置文件，实际文件系统的挂载是记录到/etc/mtab 与 /proc/mounts这两个文件中的。
+
+loop挂载，镜像文件不刻录就挂载使用。
+
+大文件制作loop设备文件
+---
+dd 可以用来建立空文件  
+dd if=/dev/zero of /srv/loopdev bs=1M count=512  
+mkfs.xfs -f /srv/loopdev  
+blk /srv/loopdev  
+mount -o loop UUID="" /mnt  
+df /mnt  
+写入文件/etc/fstab
 
 
+/dev/mapper/xxx 和 LVM有关
