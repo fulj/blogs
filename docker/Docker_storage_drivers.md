@@ -32,3 +32,21 @@ OverlayerFS layers two directories on a single Linux host and presents them as a
 
 Image and container layers on-disk
 ---
+
+> Volumes are completely managed by Docker. While bind mounts are dependent on the directory structure and OS of the host machine.
+
+***
+
+# Volumes
+- Volumes are easier to back up or migrate than bind mounts.
+- You can manage volumes using Docker CLI commands or the Docker API.
+- Volumes work on both Linux and Windows containers.
+- Volumes can be more safely shared among multiple containers.
+- Volumes drivers let you store volumes on remore hosts or cloud providers, to encrypt the contents of volumes, or to add other functionality.
+- New volumes can have their content pre-populated by a container.
+- Volumes on Docker Desktop have much higher performance than bind mounts from Mac and Windows hosts.
+
+![volume](../images/docker/docker_2021-02-24_15-01-36.png)
+
+Choose the -v or -mount flag
+---

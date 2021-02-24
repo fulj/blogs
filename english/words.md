@@ -23,4 +23,8 @@
 - [ ] <dev title="预先填充">pre-populate</div>
 - [ ] <dev title="隐藏">obscured</div>
 - [ ] <dev title="编排，协调器">orchestrators</div>
+- [ ] <dev title="数字字母">alphanumeric</div>
+- [ ] <dev title=".">periods</div>
+- [ ] <dev title="-">hyphens</div>
+- [ ] <dev title="一连串">consecutive</div>
 ***
