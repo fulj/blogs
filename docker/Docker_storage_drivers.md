@@ -34,9 +34,7 @@ Image and container layers on-disk
 ---
 
 > Volumes are completely managed by Docker. While bind mounts are dependent on the directory structure and OS of the host machine.
-
-\***
-
+___
 # Volumes
 - Volumes are easier to back up or migrate than bind mounts.
 - You can manage volumes using Docker CLI commands or the Docker API.
