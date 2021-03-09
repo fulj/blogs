@@ -3,9 +3,18 @@ Good morning/afternoon professor,I'm very glad to be here. Thank you for having 
 
 ---
 
-Good morning/afternoon dear professor, I'm very glad to meet all of you here. Thank you for having me. My name is fulj, I'm 33 years old. I come from pujiang a beautiful county in the center of zhejiang provice, and now I have settled shanghai. I graduated form zhejiang university school of distance education.
+Good morning/afternoon dear professor, I'm very glad to meet all of you here. Thank you for having me. My name is fulj, I'm 33 years old. I come from pujiang a beautiful county in the center of zhejiang provice, and now I have settled hangzhou gongshu. I graduated form zhejiang university school of distance education.
 
-I am a senior software engineer with almost 9 years of experience in IT sector.I am now working for iSoftStone as a software enineer for about two years.My daily work include gathering customer requirements, building backend apllocations, coding forntend interfaces. And some magement 
+I am a senior software engineer with almost 9 years of experience in IT sector.I am now working for iSoftStone company as a software enineer for about two years.My daily work include gathering customer requirements, building backend apllications, coding forntend interfaces. And also some management related work.I hope to move to management position in the future. I've learned that MEM of zhejiang university is very suitable for me, that I can not only get the postgraduate degree but also systematically learn the knowledge of engineering management and then use it in practice.So I firmly believe that MEM o f Zhejiang University is my best choice.
+
+About my character, if I have to use a few words to describe, they must be persistence and carefulness.In my spare time,I have broad interests like running, badminton, reading, watching movies etc. 
+
+If I am given a chance to study in this famous University, I will not live up to the tarcher for their hard work.
+
+
+
+
+
 
 In my spare time, I have broad interests 
 
