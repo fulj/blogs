@@ -19,3 +19,14 @@ If I am given a chance to study in this famous University, I will not live up to
 In my spare time, I have broad interests 
 
 I always believe that one will easuly lag behind unless he keeps on learning. Of course, if a am given a chance to study Engineering management in this famous University, I will not live up to the tearcher for their hard work.
+
+
+---
+
+Can you describe your hometown?
+
+My hometown is a small county in the center of zhejiang pro which is sorrounded by clean water and green mountains.The air there is very fresh and very suitable for living.It is rich in the ecological tourism resources with the AAAA level tourist area of Xinhua mountain and 白石湾 and Tongji Lake and First Family of Southern China. Pujiang is also named as “County of Chinese Painting and Calligraphy” and “County of Chinese Folk Art.” The industry in Pujiang is varied, among which crystals and padlocks take up to 70% market sale, which makes Pujiang as the collecting and distributing center of crystal and padlocks in China. Thus it is named the “Crystal Capital” and “Padlock Center.”
+
+---
+
+从技术层面，商业层面，底层的商业逻辑，从更高的视角看待一个项目，我们做的工程其实大多数为了实现某种商业目的。
