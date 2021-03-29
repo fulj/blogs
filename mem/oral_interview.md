@@ -67,6 +67,8 @@ The courage of the old man will inspire me from now on.
 I am so sure I will gradually become the one who is brave and strong enough to face all difficulties without any fear.
 Because the old fisherman, Santiago, had told me that everyone could be even power than you had ever imagined as long as he believed he could.
 
+That is my hometown pujiang county, and I love it so much.  Thank you 
+
 ---
 
 your strongness
