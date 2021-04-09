@@ -49,3 +49,9 @@ The client structure defines a connected client:
 - querybuf accumulates the requests from the client, which are parsed by the Redis server according to the Redis protocol and executed by calling the implementatons if the commands the client is executing.
 - reply and buf are dynamic and static buffers that accumulate the replies the server sends to the client. There buffers are incrementally written to the socket as soon as the file descriptor is writeable.
 
+
+redis可以当数据库用，可以当缓存用，也可以当消息中间件用，提供了多种数据结构包括 strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams.
+
+Using pipelining to speedup Redis queries
+---
+
